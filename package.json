@@ -1,0 +1,28 @@
+{
+  "name": "discord.js-bot",
+  "version": "1.1.0",
+  "description": "DiscordJS bot Template!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Xynnix",
+  "dependencies": {
+    "better-sqlite3": "5.4.0",
+    "chalk": "^2.4.2",
+    "discord.js": "git+https://github.com/Xynnix/Discord.js.git",
+    "integer": "2.1.0",
+    "google": "^2.1.0",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2",
+    "lodash.unset": "^4.5.2",
+    "moment": "^2.24.0",
+    "node-gyp": "^4.0.0",
+    "node-superfetch": "^0.1.9",
+    "os-utils": "0.0.14",
+    "quick-db": "1.0.5",
+    "random-puppy": "^1.1.0",
+    "superagent": "^5.0.5",
+    "urban": "^0.3.2"
+  }
+}
