@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run =  (client, message, args) => {
     message.delete();
-    message.channel.send('<a:BirdUpvote:497742633028943882>')
+    message.channel.send('/shrug')
 }
 exports.conf = {
     enabled: true,

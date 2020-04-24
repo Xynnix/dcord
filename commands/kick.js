@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const customisation = require('../customisation.json');
+const settings = require('../settings.json');
 exports.run = (client, message, args) => {
   let reason = args.slice(1).join(' ');
   let user = message.mentions.users.first();
@@ -9,7 +10,7 @@ exports.run = (client, message, args) => {
   
   if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("❌**Error:** You don't have the **Kick Members** permission!");
   
-  if (message.mentions.users.first().id === "242263403001937920") return message.reply("You can't kick my Developer:wink:");
+  if (message.mentions.users.first().id === settings.ownerID) return message.reply("You can't kick my Developer:wink:");
   if (reason.length < 1) reason = 'No reason supplied';
 
   if (!message.guild.member(user).kickable) return message.reply('I cannot kick that member');
@@ -21,8 +22,7 @@ exports.run = (client, message, args) => {
     .addField('Action:', 'Kick')
     .addField('User:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
-    .addField('Reason', reason)
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .addField('Reason', reason);
   let logchannel = message.guild.channels.find('name', 'logs');
   if  (!logchannel){
     message.channel.send(`:white_check_mark: Success! I have kicked that toxic kid.`)

@@ -25,7 +25,6 @@ exports.run = async (client, msg, args) => {
           .addField('Joined Server', `${moment(muser.joinedAt).toString().substr(0, 15)}\n(${moment(muser.joinedAt).fromNow()})`, true)
           .addField('Roles', `${muser.roles.array()}`, true)
           .addField('Is Bot', `${user.bot.toString().toUpperCase()}`, true)
-          .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
       msg.channel.send({embed});
 }
 

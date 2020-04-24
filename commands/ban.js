@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
   if (message.mentions.users.size < 1) return message.channel.send('You must mention someone to ban them.').catch(console.error);
   if (message.mentions.users.first().id === message.author.id) return message.channel.send('I can\' let you do that, self-harm is bad:facepalm:');
   if (user.id === client.user.id) return message.channel.send("You pleblord, how can you use a bot to ban itself?:joy:");
-  if (message.mentions.users.first().id === "242263403001937920") return message.channel.send("You can't ban my Developer:wink:");
+  if (message.mentions.users.first().id === settings.ownerID) return message.channel.send("You can't ban my Developer:wink:");
   if (reason.length < 1) reason = 'No reason supplied.';
   //let botRolePosition = message.guild.member(client.user).highestRole.position;
     let rolePosition = role.position;
@@ -28,7 +28,6 @@ exports.run = (client, message, args) => {
     .addField('User:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
     .addField('Reason', reason)
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
     let logchannel = message.guild.channels.find('name', 'logs');
   if  (!logchannel){
     message.channel.send({embed})

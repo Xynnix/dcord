@@ -1,5 +1,6 @@
+const settings = require('../settings.json');
 exports.run = (client, message, args) => {
-  if (message.author.id !== "242263403001937920") return message.reply('You do not have the permission to use this command!');
+  if (message.author.id !== settings.ownerID) return message.reply('You do not have the permission to use this command!');
 
   message.channel.send('Are you sure you want to shut me down?\n\nReply with \`cancel\` to **abort** the shutdown. The shutdown will self-abort in 30 seconds.');
   return message.channel.awaitMessages(m => m.author.id === message.author.id, {
@@ -29,7 +30,7 @@ exports.run = (client, message, args) => {
 };
 
 exports.conf = {
-  enabled: true,  
+  enabled: true,
   guildOnly: true,
   aliases: [],
   permLevel: 0

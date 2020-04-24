@@ -4,15 +4,13 @@ const customisation = require('../customisation.json');
 
 exports.run = async (client, message, args, tools) => {
     if (!message.mentions.users.first()) return message.reply("You need to mention someone to tickle them");
-    if(message.mentions.users.first().id === "242263403001937920") return message.reply('You can\'t tickle him you. He will explode on impact XD.');
     const { body } = await superagent
     .get("https://nekos.life/api/v2/img/tickle");
-    
+
     const embed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle(`OwO, ${message.author.username} tickled ${message.mentions.users.first().username}`)
-    .setImage(body.url) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .setImage(body.url)
     message.channel.send({embed})
 };
 

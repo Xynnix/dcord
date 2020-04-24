@@ -4,14 +4,13 @@ const customisation = require('../customisation.json');
 
 exports.run = async (client, message, args, tools) => {
     const { body } = await superagent
-    .get("https://nekos.life/api/neko");
+    .get("https://weebs4life.ga/api/neko");
     link = body.neko;
-    
+
     const embed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle("Here's Your Neko OwO")
-    .setImage(body.neko) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .setImage(body.neko)
     message.channel.send({embed})
 };
 

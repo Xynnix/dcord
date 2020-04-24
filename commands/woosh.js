@@ -3,11 +3,9 @@ const customisation = require('../customisation.json');
 
 exports.run = async (client, message, args) => {
     let avatar = message.mentions.users.size ? message.mentions.users.first().avatarURL : message.author.avatarURL;
-    
     const embed = new Discord.RichEmbed()
     .setColor("#ff9900")
-    .setImage(`https://api.alexflipnote.dev/jokeoverhead?image=` + avatar) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .setImage(`https://api.alexflipnote.dev/jokeoverhead?image=` + avatar)
     message.channel.send({embed});
 };
 

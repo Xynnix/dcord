@@ -6,15 +6,13 @@ exports.run = (client, message, args) => {
       const embed = new Discord.RichEmbed()
         .setColor(0xFFFF00)
         .setTitle(`Avatar for ${message.mentions.users.first().username}:`)
-        .setImage(`${avatar + "?size=1024"}`)
-        .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+        .setImage(`${avatar + "?size=2048"}`)
         message.channel.send({embed});
     } else {
       const embed = new Discord.RichEmbed()
       .setColor(0xFFFF00)
       .setTitle(`Avatar for ${message.author.username}:`)
-      .setImage(`${avatar + "?size=1024"}`)
-      .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+      .setImage(`${avatar + "?size=2048"}`)
       message.channel.send({embed});
     }
 }

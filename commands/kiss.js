@@ -6,12 +6,11 @@ exports.run = async (client, message, args, tools) => {
     if (!message.mentions.users.first()) return message.reply("You need to mention someone to kiss them");
     const { body } = await superagent
     .get("https://nekos.life/api/kiss");
-    
+
     const embed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle(`OwO, ${message.author.username} kissed ${message.mentions.users.first().username}`)
     .setImage(body.url) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
     message.channel.send({embed})
 };
 

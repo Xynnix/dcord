@@ -11,12 +11,12 @@ exports.run = async (client, message, args) => {
     if (!user) return message.reply('You need to imput a User ID');
     
     if (!blacklist[user]) {
-        message.reply("That user have not been blacklisted");
+        message.reply("That user has not been blacklisted");
         return;
     };
     
     if (blacklist[user].state === false) {
-        message.reply("That user have not been blacklisted");
+        message.reply("That user has not been blacklisted");
         return;
     };
 
@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
         blacklist[user] = {
             state: false
         }
-    message.reply("That user have been removed from blacklist");
+    message.reply("That user has been removed from blacklist");
     fs.writeFile("./blacklist.json", JSON.stringify(blacklist), err => {
         if(err) throw err;
         return;

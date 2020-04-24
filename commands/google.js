@@ -2,7 +2,7 @@ const google = require('google'),
       Discord = require('discord.js');
       const customisation = require('../customisation.json');
 exports.run = (client, message, args) => {
-    if (!args[0]) return message.channel.send("You must imput something for me to search!");
+    if (!args[0]) return message.channel.send("You must input something for me to search!");
     google.resultsPerPage = 1;
 
     google(args.join("+"), function(err, res) {
@@ -17,7 +17,6 @@ exports.run = (client, message, args) => {
             .setAuthor(`Results for ${args.join(' ')}`, googleIcon)
             .setThumbnail(googleThumbnail)
             .addField(`**${link.title} - ${link.href}**`, link.description)
-            .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
 
         message.channel.send({embed}).catch(e => {
            if (e) return message.channel.send("There was an error!\n" + e);

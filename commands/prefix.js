@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const customisation = require('../customisation.json');
+const settings = require('../settings.json');
 const db = require('quick.db');
 
 exports.run = async (bot, message, args, prefix) => {
@@ -17,8 +18,8 @@ exports.run = async (bot, message, args, prefix) => {
   //  if (err) console.log(err)
   //});
   if(args[0] === 'clear'){
-    db.set(`prefix_${message.guild.id}`, '/')
-        message.channel.send("Success, Cleared customised prefix. Reset to /")
+    db.set(`prefix_${message.guild.id}`, settings.prefix)
+        message.channel.send(`Success, Cleared customised prefix. Reset to ${settings.prefix}`)
         return
     }else{
     db.set(`prefix_${message.guild.id}`, args[0])

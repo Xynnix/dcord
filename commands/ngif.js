@@ -9,13 +9,12 @@ exports.run = async (client, message, args, tools) => {
     const embed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle(`OwO, Heres your Neko Gif`)
-    .setImage(body.url) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .setImage(body.url)
     message.channel.send({embed})
 };
 
 exports.conf = {
-    enabled: true,
+    enabled: false,
     guildOnly: false,
     aliases: [],
     permLevel: 0

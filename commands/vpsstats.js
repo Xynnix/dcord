@@ -27,8 +27,6 @@ exports.run = (client, message) => {
   osutils.cpuUsage(function(v) {
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
-    .setThumbnail(`https://cdn.discordapp.com/avatars/482128001828651008/2189c071f81b58045729a60ecb81ad00.png?size=2048`)
-    .setURL(`https://cdn.discordapp.com/avatars/482128001828651008/2189c071f81b58045729a60ecb81ad00.png?size=2048`)
     .setTimestamp()
     .addField("VPS Stats:", "Shows the stats of the VPS that the bot's running on.")
     .addField("--------------------------------------------------------------------------------","------------------------------------------------------------------------------")
@@ -42,8 +40,7 @@ exports.run = (client, message) => {
     .addField("Ping", Math.round(client.ping) + "ms", true)
     .addField("Uptime", days + "d " + hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s", true)
     .addField("Developer", `${customisation.ownername}`, true)
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
-        message.channel.send({embed});
+    message.channel.send({embed});
   })
 })
 }

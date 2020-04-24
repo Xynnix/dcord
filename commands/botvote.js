@@ -4,10 +4,9 @@ const customisation = require('../customisation.json');
 exports.run =  (client, message, args) => {
   message.delete();
   let embed = new Discord.RichEmbed()
-    .setTitle("Vote for Cryptonix X!")
-    .addField("Voting on discordbots.org:", "https://discordbots.org/bot/482128001828651008")
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
-  message.channel.send({embed});
+    .setTitle("Vote for me!")
+    .addField("Voting on top.gg:", `https://top.gg/bot/${client.user.id}`)
+    message.channel.send({embed});
 }
 exports.conf = {
     enabled: true,

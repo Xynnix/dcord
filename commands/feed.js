@@ -11,7 +11,6 @@ exports.run = async (client, message, args, tools) => {
     .setColor("#ff9900")
     .setTitle(`OwO, ${message.mentions.users.first().username}, you got fed by ${message.author.username}`)
     .setImage(body.url) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
     message.channel.send({embed})
 };
 

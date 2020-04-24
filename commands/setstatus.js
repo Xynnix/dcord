@@ -1,5 +1,6 @@
+const settings = require('../settings.json');
 exports.run = (client, message, args) => {
-  if (!message.author.id === '242263403001937920') return message.reply('You do not have the permission to use this command!');
+  if (!message.author.id === settings.ownerID) return message.reply('You do not have the permission to use this command!');
   if(!args[0]) return message.reply('Tell me a status boi.');
   if(args[0] === 'status') return message.reply('Come on boi. The statuses are Online, Idle, DND, and Offline.');
   args.join(" ");

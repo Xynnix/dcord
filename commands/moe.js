@@ -8,7 +8,6 @@ exports.run = (client, message, args) => {
         const embed = new Discord.RichEmbed()
         .setImage(url)
         .setColor('#ff9900')
-        .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
         return message.channel.send({ embed });
    })
    }

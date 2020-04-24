@@ -40,8 +40,7 @@ exports.run = async (bot, message, args) => {
     .setTitle("MAGIC 8 BALL!!!")
     .setColor("#AA9900")
     .addField("Q:", question)
-    .addField("A:", replies[result])
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .addField("A:", replies[result]);
 
     message.channel.send({embed});
 }

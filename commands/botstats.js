@@ -32,10 +32,8 @@ exports.run = async (client, message) => {
   osutils.cpuUsage(function(v) {
     const embed = new Discord.RichEmbed()
     .setColor(0x7289DA)
-    .setThumbnail(`https://cdn.discordapp.com/avatars/482128001828651008/2189c071f81b58045729a60ecb81ad00.png?size=2048`)
-    .setURL(`https://cdn.discordapp.com/avatars/482128001828651008/2189c071f81b58045729a60ecb81ad00.png?size=2048`)
     .setTimestamp()
-    .addField("Cryptonix X", "Show the bot's stats.")
+    .addField(client.user.name, "Show the bot's stats.")
     .addField("--------------------------------------------------------------------------------","------------------------------------------------------------------------------")
     .addField("Total Servers", `${client.guilds.size}`, true)
     .addField("Server Prefix", prefix, true)
@@ -48,8 +46,7 @@ exports.run = async (client, message) => {
     .addField("Ping", Math.round(client.ping) + "ms", true)
     .addField("Uptime", days + "d " + hours + "h " + minutes + "m " + seconds + "." + milliseconds + "s", true)
     .addField("Developer", `${customisation.ownername}`, true)
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
-        message.channel.send({embed});
+    message.channel.send({embed});
   })
 })
 }

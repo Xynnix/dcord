@@ -33,7 +33,6 @@ exports.run = (client, message, args) => {
     .addField('Action:', 'Clear Warns', true)
     .addField('User:', `${user.username}#${user.discriminator}`, true)
     .addField('Result:',reason, true)
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
     message.channel.send({embed});
 }
 

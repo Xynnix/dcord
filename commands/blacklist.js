@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require('fs');
 const customisation = require('../customisation.json');
-
+const settings = require('../settings.json');
 exports.run = async (client, message, args) => {
     //message.delete();
     let blacklist = JSON.parse(fs.readFileSync("./blacklist.json", "utf8"));
@@ -11,10 +11,10 @@ exports.run = async (client, message, args) => {
     if (isNaN(amount)) {
         return message.reply('Please enter a valid UserID');
     }
-    if (!message.author.id === '242263403001937920') return message.reply("You don't have the permission to use this command...:facepalm:");
+    if (!message.author.id === settings.ownerID) return message.reply("You don't have the permission to use this command...:facepalm:");
     //if (user = "blacklist") return message.reply('You need to imput a User ID');
-    if (!user) return message.reply('You need to imput a User ID');
-    if (args[0] === '242263403001937920') return message.reply("You can't blacklist yourself, Dev:joy: That would be horrible.");
+    if (!user) return message.reply('You need to input a User ID');
+    if (args[0] === settings.ownerID) return message.reply("You can't blacklist yourself, Dev:joy: That would be horrible.");
 
     if (!blacklist[user]) {
         blacklist[user] = {

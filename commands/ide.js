@@ -29,7 +29,6 @@ exports.run = (client, message) => {
   .addField('Sublime Text','Sublime text starts off as a nice small and fast editor.' +
   ' It\'s the fastest text editor that I\'ve seen. There is also a' +
   ' wide selection of plugins. [Download](https://www.sublimetext.com/)')
-  .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
 
   message.channel.send({embed});
     }

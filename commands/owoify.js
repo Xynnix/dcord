@@ -7,9 +7,10 @@ exports.run = async (client, message, args, tools) => {
     if (!args[0]) return message.reply("You need to input a sentence to OwOify")
     const { body } = await superagent
     .get("https://nekos.life/api/v2/owoify?text=" + args.join('%20'));
-    
-    
-    message.channel.send(body.owo)
+    const emb = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .addField(body.owo)
+    message.channel.send(emb)
 };
 
 exports.conf = {

@@ -1,5 +1,6 @@
+const settings = require('../settings.json');
 exports.run = (client, message, args) => {
-  if (message.author.id !== '242263403001937920') return message.reply('You do not have the permission to use this command!');
+  if (message.author.id !== settings.ownerID) return message.reply('You do not have the permission to use this command!');
   let command;
   if (client.commands.has(args[0])) {
     command = args[0];

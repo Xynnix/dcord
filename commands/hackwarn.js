@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const fs = require("fs");
 const ms = require("ms");
+const settings = require('../settings.json');
 const customisation = require('../customisation.json');
 
 exports.run = (client, message, args) => {
@@ -10,7 +11,7 @@ exports.run = (client, message, args) => {
   //let logchannel = message.guild.channels.find('name', 'logs');
   if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("❌**Error:** You don't have the **Kick Members** permission!");
   if (user === message.author.id) return message.reply('I can\' let you do that, self-harm is bad:facepalm:');
-  if (user === "242263403001937920") return message.reply("You can't warn my Developer:wink:");
+  if (user === settings.ownerID) return message.reply("You can't warn my Developer:wink:");
   if (!user) return message.reply('You must provide a user ID.').catch(console.error);
   if (user === message.author.id) return message.reply('I can\' let you do that, self-harm is bad:facepalm:');
   //if (!logchannel) return message.reply('I cannot find a warn logs channel');
@@ -36,7 +37,6 @@ exports.run = (client, message, args) => {
   .addField('Number of warnings:', warns[`${user}, ${message.guild.id}`].warns)
   .addField('Reason', reason)
   .addField('Logged in:', '<#' + logchannel.id +'>')
-  .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
 
   let logchannel = message.guild.channels.find('name', 'logs');
     if  (!logchannel){

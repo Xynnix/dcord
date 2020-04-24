@@ -8,12 +8,10 @@ exports.run = async (client, message, args, tools) => {
     if (message.mentions.users.first().id === "482128001828651008") return message.channel.send('<a:yayyy:497742636439044096>');
     const { body } = await superagent
     .get("https://nekos.life/api/v2/img/poke");
-    
     const embed = new Discord.RichEmbed()
     .setColor("#ff9900")
     .setTitle(`OwO, ${message.author.username} poked ${message.mentions.users.first().username}`)
-    .setImage(body.url) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .setImage(body.url)
     message.channel.send({embed})
 };
 

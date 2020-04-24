@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
   if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply(":no_entry_sign: **Error:** You don't have the **Ban Members** permission!");
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to soft ban them.').catch(console.error);
   if (message.mentions.users.first().id === message.author.id) return message.reply('I can\' let you do that, self-harm is bad:facepalm:');
-  if (message.mentions.users.first().id === "242263403001937920") return message.reply("You can't ban my Developer:wink:");
+  if (message.mentions.users.first().id === settings.ownerID) return message.reply("You can't ban my Developer:wink:");
   if (reason.length < 1) reason = 'No reason supplied.';
 
   if (!message.guild.member(user).bannable) return message.reply(`:redTick: I cannot ban that member`);
@@ -23,7 +23,6 @@ exports.run = (client, message, args) => {
     .addField('User:', `${user.username}#${user.discriminator} (${user.id})`)
     .addField('Moderator:', `${message.author.username}#${message.author.discriminator}`)
     .addField('Reason', reason)
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
     message.mentions.users.first().send({embed});
     message.channel.send(`:hammer: Done. <@${user.id}> has been Softbanned`);
   return client.channels.get(logchannel.id).send({embed});

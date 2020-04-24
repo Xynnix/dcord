@@ -35,7 +35,6 @@ exports.run = async (bot, message, args) => {
                                           "----------------------------------------", true)
 
             .setColor("0x#FF0000")
-            .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
   await message.channel.send({embed: sumsum});
 
 }

@@ -5,8 +5,7 @@ exports.run = async (client, message, args) => {
     if (!args[0]) return message.reply('Provide a truth!')
     const embed = new Discord.RichEmbed()
     .setColor("#ff9900")
-    .setImage(`https://api.alexflipnote.dev/scroll?text=` + args.join('%20')) 
-    .setFooter(`© Cryptonix X Mod Bot by ${customisation.ownername}`);
+    .setImage(`https://api.alexflipnote.dev/scroll?text=` + args.join('%20'))
     message.channel.send({embed});
 };
 

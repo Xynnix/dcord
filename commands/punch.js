@@ -1,5 +1,6 @@
+const settings = require('../settings.json');
 exports.run = (client, message) => {
-  var owner = "242263403001937920"
+  var owner = settings.ownerID
   let user = message.mentions.users.first();
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to punch them.')
         if(user.id === owner){
